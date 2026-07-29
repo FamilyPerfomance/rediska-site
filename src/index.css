@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --breakpoint-sm: 48.125rem;
+  --breakpoint-md: 63.75rem;
+  --breakpoint-lg: 88.125rem;
+
+  --font-sf-pro: "SF Pro", ui-sans-serif, system-ui, sans-serif;
+  --font-noto: "Noto Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-black: #031d40;
+  --color-background: #f5f4fd;
+  --color-light-gray: #fbfaff;
+  --color-gray: #7d8999;
+  --color-border: #e5e4f3;
+  --color-blue: #4991f5;
+  --color-pink: #ff56aa;
+  --color-orange: #ff9825;
+  --color-purple: #a164fc;
+
+  --background-image-brand-gradient-pink: linear-gradient(258.83deg, #fa1993 0%, #fa2046 100%);
+  --background-image-brand-gradient-blue: linear-gradient(90deg, #494bf6 0%, #7a49f6 100%);
+
+  --shadow-card: 0px 12px 50px -2px #3a4b7a0d;
+
+  --animate-slide-up: slide-up 0.4s ease-out;
+  --animate-fade-in: fade-in 0.2s ease-out;
+  --animate-fade-out: fade-out 0.2s ease-in forwards;
+  --animate-scale-in: scale-in 0.2s ease-out;
+  --animate-scale-out: scale-out 0.2s ease-in forwards;
+
+  @keyframes slide-up {
+    from {
+      opacity: 0;
+      transform: translateY(1.5rem);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scale-out {
+    from {
+      opacity: 1;
+      transform: scale(1);
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+  }
+}
+
+@layer base {
+  :root {
+    @apply font-sf-pro bg-background relative;
+  }
+
+  html {
+    @apply has-data-mobile-menu:overflow-hidden has-data-mobile-menu:bg-white has-data-popover-open:overflow-hidden;
+  }
+}
