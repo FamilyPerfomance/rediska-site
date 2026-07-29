@@ -159,7 +159,7 @@ const apiPlanToTier = (plan: ApiPlan): Tier => {
     description: plan.description || "Для выбранного сценария работы приложения.",
     accent: style.accent,
     features: (plan.features ?? []).filter(Boolean).map(String),
-    limits: normalizeLimits(plan.limits),
+    limits: normalizeLimits(plan.limits).slice(0, LIMIT_ICONS.length),
     buttonVariant: style.buttonVariant,
     buttonText: "Выбрать",
     prices: {
