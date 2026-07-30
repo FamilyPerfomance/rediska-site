@@ -83,11 +83,11 @@ const SocialButton = ({ href, label, icon, iconClassName, ...props }: ComponentP
 };
 
 const VKButton = (props: ComponentProps<"button">) => (
-  <SocialButton href={landingConfig().vkUrl} label="vk" icon="/icons/vk.png" iconClassName="w-6 md:w-7.5" {...props} />
+  <SocialButton href={landingConfig().vkUrl} label="vk" icon="/icons/vk.svg" iconClassName="w-6 md:w-7.5" {...props} />
 );
 
 const MAXButton = (props: ComponentProps<"button">) => (
-  <SocialButton href={landingConfig().maxUrl} label="max" icon="/icons/max.png" iconClassName="h-6 w-6 md:h-7.5 md:w-7.5" {...props} />
+  <SocialButton href={landingConfig().maxUrl} label="max" icon="/icons/max.svg" iconClassName="h-6 w-6 md:h-7.5 md:w-7.5" {...props} />
 );
 
 export { Button, LabeledCreateButton, VKButton, MAXButton };
