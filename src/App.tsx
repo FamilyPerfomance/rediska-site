@@ -500,7 +500,7 @@ const AppContent = () => {
               <div className="content flex max-sm:flex-col gap-2.5 md:gap-5 lg:gap-7.5">
                 <Card className="flex-1 max-md:items-center max-sm:contents md:contents">
                   <Preview
-                    src="/section-control-center.png"
+                    src="/section-control-center.png?v=2"
                     alt="Изображение интерфейса центра управления"
                   />
                 </Card>
@@ -620,7 +620,7 @@ const AppContent = () => {
                 </Card>
                 <Card className="flex-1 max-sm:contents md:contents max-md:items-center">
                   <Preview
-                    src="/section-analytics.png"
+                    src="/section-analytics.png?v=2"
                     alt="Изображение интерфейса панели аналитики"
                   />
                 </Card>
