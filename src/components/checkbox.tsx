@@ -1,11 +1,12 @@
 import type { ComponentProps } from "react";
 import { cn } from "tailwind-variants";
 
-const Checkbox = ({ className, ...props }: ComponentProps<"div">) => (
-  <div className={cn("grid grid-cols-1 group place-items-center", className)} {...props}>
+const Checkbox = ({ className, ...props }: ComponentProps<"input">) => (
+  <div className={cn("grid grid-cols-1 group place-items-center", className)}>
     <input
       className="appearance-none bg-white aspect-square box-border row-start-1 col-start-1 outline-1 outline-border rounded-[3px] checked:bg-brand-gradient-blue checked:outline-0 size-5"
       type="checkbox"
+      {...props}
     />
     <svg
       viewBox="0 0 14 14"

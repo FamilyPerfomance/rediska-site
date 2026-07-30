@@ -31,13 +31,13 @@ const ContactForm = ({ className, ...props }: ComponentProps<"form">) => {
       {...props}
     >
       <div className="flex max-sm:flex-col gap-5 sm:gap-2.5 md:gap-5">
-        <Input type="tel" className="w-full sm:max-md:w-60" placeholder="Телефон" value={phone} onChange={(event) => setPhone(event.target.value)} required />
+        <Input type="tel" inputMode="numeric" pattern="[0-9]*" className="w-full sm:max-md:w-60" placeholder="Телефон" value={phone} onChange={(event) => setPhone(event.target.value.replace(/\D/g, ""))} required />
         <Button type="submit" disabled={isSubmitting}>
           <TextMenu>{isSubmitting ? "Отправляем..." : "Оставить заявку"}</TextMenu>
         </Button>
       </div>
       <label className="flex gap-2.5">
-        <Checkbox className="shrink-0" />
+        <Checkbox className="shrink-0" required />
         <TextSmall className="text-gray">
           {"Даю свое согласие на "}
           <a href="/terms" className="text-orange">

@@ -66,10 +66,10 @@ const ContactPopover = () => {
           </SectionTitle>
           <SectionSubtitle>Никакого кода и сложных настроек. Мы поможем!</SectionSubtitle>
         </SectionHead>
-        <Input type="tel" className="w-full sm:max-md:w-60" placeholder="Телефон" value={phone} onChange={(event) => setPhone(event.target.value)} required />
+        <Input type="tel" inputMode="numeric" pattern="[0-9]*" className="w-full sm:max-md:w-60" placeholder="Телефон" value={phone} onChange={(event) => setPhone(event.target.value.replace(/\D/g, ""))} required />
         <div className="flex flex-col gap-5">
           <label className="flex gap-2.5">
-            <Checkbox className="shrink-0" />
+            <Checkbox className="shrink-0" required />
             <TextSmall className="text-gray">
               {"Даю свое согласие на "}
               <a href="/terms" className="text-orange">
