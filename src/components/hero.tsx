@@ -25,7 +25,9 @@ const HeroButtons = () => {
 
   return (
     <div className="flex max-sm:items-center max-sm:flex-col gap-2.5 sm:gap-5 md:gap-7.5">
-      <Button type="button" onClick={openContact}>Бесплатное ДЕМО</Button>
+      <a href="https://max.ru/id434583104782_bot" target="_blank" rel="noopener noreferrer">
+        <Button type="button">Открыть демо в MAX</Button>
+      </a>
       <button type="button" onClick={openContact} className="cursor-pointer text-balance h-12.5 flex gap-2.5 items-center text-start">
         <IconPlay className="shrink-0" />
         <TextMenu>Посмотреть как это работает</TextMenu>
