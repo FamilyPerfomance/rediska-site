@@ -6,6 +6,7 @@ import { Input } from "./input";
 import { SectionHead, SectionSubtitle, SectionTitle } from "./section";
 import { TextAccent, TextMenu, TextSmall } from "./typography";
 import { usePopover } from "../hooks/usePopover";
+import { submitLead } from "../api/leads";
 
 const ClosePopoverButton = () => {
   const { close } = usePopover();
@@ -37,12 +38,23 @@ const ClosePopoverButton = () => {
 
 const ContactPopover = () => {
   const { showThankYou } = usePopover();
+  const [phone, setPhone] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   return (
     <form
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault();
-        showThankYou();
+        if (isSubmitting) return;
+
+        setIsSubmitting(true);
+
+        try {
+          await submitLead({ phone, source: "popup" });
+          showThankYou();
+        } finally {
+          setIsSubmitting(false);
+        }
       }}
       className="flex flex-col gap-7.5 bg-white rounded-[20px] overflow-hidden relative"
     >
@@ -54,7 +66,7 @@ const ContactPopover = () => {
           </SectionTitle>
           <SectionSubtitle>Никакого кода и сложных настроек. Мы поможем!</SectionSubtitle>
         </SectionHead>
-        <Input type="tel" className="w-full sm:max-md:w-60" placeholder="Телефон" />
+        <Input type="tel" className="w-full sm:max-md:w-60" placeholder="Телефон" value={phone} onChange={(event) => setPhone(event.target.value)} required />
         <div className="flex flex-col gap-5">
           <label className="flex gap-2.5">
             <Checkbox className="shrink-0" />
@@ -65,8 +77,8 @@ const ContactPopover = () => {
               </a>
             </TextSmall>
           </label>
-          <Button type="submit" className="w-full!">
-            <TextMenu>Хочу создать приложение</TextMenu>
+          <Button type="submit" className="w-full!" disabled={isSubmitting}>
+            <TextMenu>{isSubmitting ? "Отправляем..." : "Хочу создать приложение"}</TextMenu>
           </Button>
         </div>
       </div>

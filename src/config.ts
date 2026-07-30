@@ -4,6 +4,7 @@ type LandingConfig = {
   loginUrl?: string;
   registerUrl?: string;
   tariffsApiUrl?: string;
+  leadsApiUrl?: string;
 };
 
 const panelUrl = (import.meta.env.VITE_PANEL_URL || 'https://panels.rediska-app.ru').replace(/\/$/, '');
@@ -21,6 +22,7 @@ const landingConfig = () => {
     loginUrl: config.loginUrl || `${panelUrl}/login`,
     registerUrl: config.registerUrl || `${panelUrl}/register`,
     tariffsApiUrl: config.tariffsApiUrl || `${publicApiUrl}/tariffs`,
+    leadsApiUrl: config.leadsApiUrl || `${publicApiUrl}/leads`,
   };
 };
 
