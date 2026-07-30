@@ -56,8 +56,8 @@ const AppContent = () => {
               <HeroImage
                 src="/hero-lg.png"
                 alt="hero"
-                srcSet="/hero-sm.png 290w, /hero-md.png 380w, /hero-lg.png 520w"
-                sizes="(width >= 48.125rem) 290px, (width >= 63.75rem) 380px, (width >= 88.125rem) 520px"
+                srcSet="/hero-sm.png 290w, /hero-md.png 380w, /hero-lg.png 780w"
+                sizes="(width >= 88.125rem) 520px, (width >= 63.75rem) 380px, 290px"
                 className="max-sm:object-cover"
               />
               <div className="absolute bottom-0 sm:hidden bg-linear-to-b from-transparent to-background h-25 w-full"></div>

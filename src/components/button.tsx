@@ -66,10 +66,10 @@ const LabeledCreateButton = ({ className, ...props }: ComponentProps<"div">) => 
   );
 };
 
-const SocialButton = ({ href, label, icon, ...props }: ComponentProps<"button"> & { href?: string; label: string; icon: string }) => {
+const SocialButton = ({ href, label, icon, iconClassName, ...props }: ComponentProps<"button"> & { href?: string; label: string; icon: string; iconClassName?: string }) => {
   const buttonElement = (
     <Button variant="icon" {...props}>
-      <img className="h-5 w-5 object-contain md:h-6 md:w-6" src={icon} alt={label} />
+      <img className={cn("object-contain", iconClassName)} src={icon} alt={label} />
     </Button>
   );
 
@@ -83,11 +83,11 @@ const SocialButton = ({ href, label, icon, ...props }: ComponentProps<"button"> 
 };
 
 const VKButton = (props: ComponentProps<"button">) => (
-  <SocialButton href={landingConfig().vkUrl} label="vk" icon="/icons/vk.png" {...props} />
+  <SocialButton href={landingConfig().vkUrl} label="vk" icon="/icons/vk.png" iconClassName="w-6 md:w-7.5" {...props} />
 );
 
 const MAXButton = (props: ComponentProps<"button">) => (
-  <SocialButton href={landingConfig().maxUrl} label="max" icon="/icons/max.png" {...props} />
+  <SocialButton href={landingConfig().maxUrl} label="max" icon="/icons/max.png" iconClassName="h-6 w-6 md:h-7.5 md:w-7.5" {...props} />
 );
 
 export { Button, LabeledCreateButton, VKButton, MAXButton };
