@@ -526,7 +526,7 @@ const AppContent = () => {
                         },
                         {
                           icon: "/icons/message.png",
-                          text: "Автоматические сообщения",
+                          text: "Автоматизация статусов заказов",
                         },
                         {
                           icon: "/icons/rocket.png",

@@ -49,8 +49,8 @@ const Navigation = ({
           </div>
         </div>
         <div className="flex gap-2.5 items-center max-sm:hidden">
-          <VKButton className="h-9.5 lg:h-11.25" />
           <MAXButton className="h-9.5 lg:h-11.25" />
+          <VKButton className="h-9.5 lg:h-11.25" />
         </div>
         <div className="flex gap-2.5 items-center max-sm:hidden">
           <a href={config.loginUrl}><Button className="py-2.5 px-3.5 md:py-3! md:px-4!" variant="white"><TextMenu>Войти</TextMenu></Button></a>
@@ -89,8 +89,8 @@ const MobileMenu = ({ children }: { children?: ReactNode }) => {
             <Button type="button" onClick={openContact} variant="secondary"><TextMenu>Демо</TextMenu></Button>
           </div>
           <div className="flex gap-2.5 justify-center">
-            <VKButton />
             <MAXButton />
+            <VKButton />
           </div>
           <div className="flex flex-col gap-5">
             <a href={config.loginUrl}><Button variant="white"><TextMenu>Войти</TextMenu></Button></a>

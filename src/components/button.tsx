@@ -69,7 +69,7 @@ const LabeledCreateButton = ({ className, ...props }: ComponentProps<"div">) => 
 const SocialButton = ({ href, label, icon, ...props }: ComponentProps<"button"> & { href?: string; label: string; icon: string }) => {
   const buttonElement = (
     <Button variant="icon" {...props}>
-      <img src={icon} alt={label} />
+      <img className="h-5 w-5 object-contain md:h-6 md:w-6" src={icon} alt={label} />
     </Button>
   );
 

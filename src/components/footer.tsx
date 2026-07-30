@@ -7,8 +7,8 @@ const Footer = () => (
     <div className="flex justify-between py-5 lg:py-7.5">
       <IconLogo className="w-25.75 h-10 md:w-29.5 md:h-11.5" />
       <div className="flex gap-2.5">
-        <VKButton className="h-10 md:h-11.25" />
         <MAXButton className="h-10 md:h-11.25" />
+        <VKButton className="h-10 md:h-11.25" />
       </div>
     </div>
     <div className="flex justify-between">
@@ -107,8 +107,8 @@ const FooterMobile = () => (
     <div className="flex justify-between">
       <IconLogo className="w-25.75 h-10" />
       <div className="flex gap-2.5">
-        <VKButton className="h-10" />
         <MAXButton className="h-10" />
+        <VKButton className="h-10" />
       </div>
     </div>
     <div className="flex flex-col gap-2.5 items-center">
