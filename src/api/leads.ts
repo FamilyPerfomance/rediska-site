@@ -1,4 +1,4 @@
-import { landingConfig } from "../config";
+import { landingConfig, referralCode } from "../config";
 
 type LeadPayload = {
   phone: string;
@@ -16,6 +16,7 @@ const submitLead = async ({ phone, source }: LeadPayload) => {
       phone,
       source,
       pageUrl: window.location.href,
+      ref: referralCode(),
     }),
   });
 
