@@ -72,7 +72,7 @@ const ContactPopover = () => {
             <Checkbox className="shrink-0" required />
             <TextSmall className="text-gray">
               {"Даю свое согласие на "}
-              <a href="/terms" className="text-orange">
+              <a href="/personal-data" className="text-orange">
                 обработку персональных данных
               </a>
             </TextSmall>
