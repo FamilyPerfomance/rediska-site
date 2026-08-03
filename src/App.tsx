@@ -18,6 +18,7 @@ import { ContactForm } from "./components/contact-form";
 import { Carousel, CarouselContainer } from "./components/carousel";
 import { Footer, FooterMobile } from "./components/footer";
 import { SubscriptionPlans } from "./components/plan-section";
+import { SitePage } from "./components/site-page";
 import { useIsMobile } from "./hooks/useIsMobile";
 import { Templates } from "./components/template-section";
 import { PopoverOverlay } from "./components/contact-popover";
@@ -28,6 +29,11 @@ const AppContent = () => {
   const isMobile = useIsMobile();
   const { openContact } = usePopover();
   const config = landingConfig();
+  const slug = window.location.pathname.replace(/^\//, '').replace(/\/$/, '');
+
+  if (slug && !slug.includes('/') && !slug.includes('.')) {
+    return <SitePage slug={slug} />;
+  }
 
   return (
     <>

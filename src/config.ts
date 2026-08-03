@@ -1,3 +1,22 @@
+type FooterLink = {
+  label: string;
+  href: string;
+};
+
+type LandingLegal = {
+  offer?: string;
+  policy?: string;
+  requisites?: string;
+};
+
+type PublicSitePageSummary = {
+  title: string;
+  slug: string;
+  url: string;
+  showInFooter: boolean;
+  sortOrder: number;
+};
+
 type LandingConfig = {
   vkUrl?: string;
   maxUrl?: string;
@@ -5,6 +24,9 @@ type LandingConfig = {
   registerUrl?: string;
   tariffsApiUrl?: string;
   leadsApiUrl?: string;
+  sitePagesApiUrl?: string;
+  footerLinks?: FooterLink[];
+  legal?: LandingLegal;
 };
 
 const panelUrl = (import.meta.env.VITE_PANEL_URL || 'https://panels.rediska-app.ru').replace(/\/$/, '');
@@ -42,8 +64,17 @@ const landingConfig = () => {
     registerUrl: withReferral(config.registerUrl || `${panelUrl}/register`),
     tariffsApiUrl: config.tariffsApiUrl || `${publicApiUrl}/tariffs`,
     leadsApiUrl: config.leadsApiUrl || `${publicApiUrl}/leads`,
+    landingSettingsApiUrl: `${publicApiUrl}/landing-settings`,
+    sitePagesApiUrl: config.sitePagesApiUrl || `${publicApiUrl}/site-pages`,
+    footerLinks: config.footerLinks || [
+      { label: 'Политика конфиденциальности', href: '/privacy' },
+      { label: 'Лицензионное соглашение', href: '/license' },
+      { label: 'Согласие на обработку ПДН', href: '/personal-data' },
+      { label: 'Пользовательское соглашение', href: '/user-agreement' },
+    ],
+    legal: config.legal || {},
   };
 };
 
 export { landingConfig, referralCode };
-export type { LandingConfig };
+export type { FooterLink, LandingConfig, LandingLegal, PublicSitePageSummary };

@@ -1,6 +1,17 @@
 import { MAXButton, VKButton } from "./button";
+import { landingConfig } from "../config";
 import { IconLogo } from "./icons";
 import { TextAccent, TextMenu } from "./typography";
+
+const FooterLinks = () => (
+  <>
+    {landingConfig().footerLinks.map((link) => (
+      <a key={`${link.label}-${link.href}`} href={link.href}>
+        <TextMenu>{link.label}</TextMenu>
+      </a>
+    ))}
+  </>
+);
 
 const Footer = () => (
   <div className="flex flex-col gap-2.5 md:gap-7.5">
@@ -85,18 +96,7 @@ const Footer = () => (
     <div className="py-7.5 flex justify-between">
       <TextMenu className="shrink-0">© 2026 Редис</TextMenu>
       <div className="flex gap-2.5 lg:gap-7.5 flex-wrap max-lg:max-w-112.5 justify-end">
-        <a href="/policy">
-          <TextMenu>Политика конфиденциальности</TextMenu>
-        </a>
-        <a href="/licensing-agreement">
-          <TextMenu>Лицензионное соглашение</TextMenu>
-        </a>
-        <a href="/data-use">
-          <TextMenu>Согласие на обработку пдн</TextMenu>
-        </a>
-        <a href="/user-agreement">
-          <TextMenu>Пользовательское соглашение</TextMenu>
-        </a>
+        <FooterLinks />
       </div>
     </div>
   </div>
@@ -112,18 +112,7 @@ const FooterMobile = () => (
       </div>
     </div>
     <div className="flex flex-col gap-2.5 items-center">
-      <a href="/policy">
-        <TextMenu>Политика конфиденциальности</TextMenu>
-      </a>
-      <a href="/licensing-agreement">
-        <TextMenu>Лицензионное соглашение</TextMenu>
-      </a>
-      <a href="/data-use">
-        <TextMenu>Согласие на обработку пдн</TextMenu>
-      </a>
-      <a href="/user-agreement">
-        <TextMenu>Пользовательское соглашение</TextMenu>
-      </a>
+      <FooterLinks />
       <TextMenu>© 2026 Редис</TextMenu>
     </div>
   </div>

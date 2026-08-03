@@ -12,7 +12,7 @@ const renderApp = () => {
   );
 };
 
-fetch(landingConfig().tariffsApiUrl.replace(/\/tariffs$/, "/landing-settings"))
+fetch(landingConfig().landingSettingsApiUrl)
   .then((response) => (response.ok ? response.json() : Promise.reject()))
   .then((config) => {
     window.REDIS_LANDING_CONFIG = {
