@@ -9,6 +9,12 @@ type LandingLegal = {
   requisites?: string;
 };
 
+type LandingSeo = {
+  title?: string;
+  description?: string;
+  robots?: string;
+};
+
 type PublicSitePageSummary = {
   title: string;
   slug: string;
@@ -27,6 +33,8 @@ type LandingConfig = {
   sitePagesApiUrl?: string;
   footerLinks?: FooterLink[];
   legal?: LandingLegal;
+  seo?: LandingSeo;
+  analyticsHeadHtml?: string;
 };
 
 const panelUrl = (import.meta.env.VITE_PANEL_URL || 'https://panels.rediska-app.ru').replace(/\/$/, '');
@@ -73,8 +81,10 @@ const landingConfig = () => {
       { label: 'Пользовательское соглашение', href: '/user-agreement' },
     ],
     legal: config.legal || {},
+    seo: config.seo || {},
+    analyticsHeadHtml: config.analyticsHeadHtml || '',
   };
 };
 
 export { landingConfig, referralCode };
-export type { FooterLink, LandingConfig, LandingLegal, PublicSitePageSummary };
+export type { FooterLink, LandingConfig, LandingLegal, LandingSeo, PublicSitePageSummary };
